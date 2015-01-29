@@ -16,29 +16,29 @@ module Fy
     end
 
     def query_for_hash
-      query_url = api_url + URI.escape( @words.gsub(/ /, '+') )
-      result_json = Net::HTTP.get( URI(query_url) )
+      query_url    = api_url + URI.escape(@words.gsub(/ /, '+'))
+      result_json  = Net::HTTP.get(URI(query_url))
       @result_hash = JSON.parse(result_json)
     end
 
     def translations
       translations = @result_hash["translation"]
-      lines = translations.collect do |translation|
+      lines        = translations.collect do |translation|
         "  " + translation.color(:green)
       end
       lines << ""
     end
 
     def word_and_phonetic
-      line = " " + @words
+      line     = " " + @words
       phonetic = @result_hash["basic"]["phonetic"] if @result_hash["basic"]
-      line += " [ #{phonetic} ]".color(:magenta) if phonetic
+      line     += " [ #{phonetic} ]".color(:magenta) if phonetic
       [line, ""]
     end
 
     def dict_explains
       dict_explains = @result_hash["basic"]["explains"] if @result_hash["basic"]
-      lines = dict_explains.collect do |explain|
+      lines         = dict_explains.collect do |explain|
         " - " + explain.color(:green)
       end
       lines << ""
@@ -46,10 +46,10 @@ module Fy
 
     def web_results
       return [] unless @result_hash["web"]
-      lines = []
+      lines       = []
       web_results = @result_hash["web"]
       web_results.each_with_index do |web_result, i|
-        web_result_key = web_result["key"].gsub(/#{@words}/i, @words.color(:yellow))
+        web_result_key   = web_result["key"].gsub(/#{@words}/i, @words.color(:yellow))
         web_result_value = web_result["value"].join(', ').color(:cyan)
         lines << " #{i+1}. #{web_result_key}"
         lines << "    #{web_result_value}"

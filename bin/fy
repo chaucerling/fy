@@ -23,7 +23,7 @@ if ARGV.empty?
   rescue Interrupt
     puts 'bye~'
   end
-elsif %w{-h --help}.any?{ |c| ARGV.include? c }
+elsif %w{-h --help}.any? { |c| ARGV.include? c }
   puts help
 else
   puts Fy::Fanyi.new(ARGV.join(' ')).result
