@@ -3,11 +3,11 @@
 require_relative '../lib/fy/fanyi'
 
 help = <<HELP
-fanyi.rb: Translate tools in the command line
+fy: Translate tools in the command line
   $ fy word
   $ fy world peace
   $ fy chinglish
-  $ fy 
+  $ fy
   > enter the loop mode, ctrl+c to exit
 HELP
 
