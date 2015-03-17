@@ -2,7 +2,7 @@
 
 A translate tool in your command line, inspired by [Fanyi](https://github.com/afc163/fanyi).
 
-![](http://dd-personal.qiniudn.com/Screenshot from 2014-11-25 17:21:23.png)
+![](http://dd-personal.qiniudn.com/Screenshot from 2015-03-17 22:36:18.png)
 
 ---
 
