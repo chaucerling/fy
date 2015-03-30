@@ -1,4 +1,5 @@
 # Fy
+[![Gem](https://img.shields.io/gem/v/fy.svg)](https://rubygems.org/gems/fy)
 
 A translate tool in your command line, inspired by [Fanyi](https://github.com/afc163/fanyi).
 
