@@ -3,7 +3,7 @@
 
 A translate tool in your command line, inspired by [Fanyi](https://github.com/afc163/fanyi).
 
-![](http://dd-personal.qiniudn.com/Screenshot from 2015-03-17 22:36:18.png)
+![](http://dd-personal.qiniudn.com/Screenshot from 2015-04-25 20:33:21.png)
 
 ---
 
