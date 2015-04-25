@@ -4,6 +4,8 @@ require "json"
 require "rainbow/ext/string"
 
 module Fy
+  API_URL = "http://fanyi.youdao.com/openapi.do?keyfrom=JIANGDi&key=891853312&type=data&doctype=json&version=1.1&q="
+
   class Fanyi
 
     def initialize(input)
@@ -11,12 +13,8 @@ module Fy
       query_for_hash
     end
 
-    def api_url
-      "http://fanyi.youdao.com/openapi.do?keyfrom=JIANGDi&key=891853312&type=data&doctype=json&version=1.1&q="
-    end
-
     def query_for_hash
-      query_url    = api_url + URI.escape(@words.gsub(/ /, '+'))
+      query_url    = API_URL + URI.escape(@words.gsub(/ /, '+'))
       result_json  = Net::HTTP.get(URI(query_url))
       @result_hash = JSON.parse(result_json)
     end
